@@ -15,11 +15,16 @@
   </div>
 
   <script src="script.js"></script>
-  <script>
+ <script>
   const tg = window.Telegram.WebApp;
   tg.expand(); // Расширяет окно Mini App
   tg.MainButton.text = "Продолжить";
   tg.MainButton.show();
+
+  // Добавляем действие при нажатии Telegram-кнопки
+  tg.MainButton.onClick(() => {
+    startGame();
+  });
 </script>
 </body>
 </html>
