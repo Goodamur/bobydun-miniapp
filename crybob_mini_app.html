@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CryBob Mini App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(145deg, #0e1218, #1e2a38);
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      background: #00bfa6;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #00a08b;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Привет, я CryBob 👋</h1>
+    <p>Я помогу тебе разобраться в крипте весело и по шагам. Готов начать?</p>
+    <button onclick="startApp()">🚀 Начать обучение</button>
+    <div class="message" id="output"></div>
+  </div>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+
+    function startApp() {
+      document.getElementById('output').innerText = 'Отлично! Сейчас откроется первый урок...';
+      // Здесь можно будет позже направить на другой экран или урок
+    }
+  </script>
+</body>
+</html>
