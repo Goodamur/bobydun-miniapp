@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Загрузочный экран -->
     <div id="loading-screen" class="loading-screen">
         <img src="media/logo.png" alt="Logo" class="logo" onerror="this.style.display='none'">
         <p>Загрузка...</p>
     </div>
+
+    <!-- Основное приложение -->
     <div id="app" class="app" style="display: none;">
         <img src="media/character.png" alt="Character" class="character" onerror="this.style.display='none'">
         <div class="text-box">
-            <p id="animatedText">Добро пожаловать!</p>
+            <p id="animatedText"></p>
         </div>
         <button id="nextButton" class="button">Далее</button>
     </div>
