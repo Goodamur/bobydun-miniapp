@@ -1,27 +1,85 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bobydun MiniApp</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Диалог с Boby</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: orange;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button.hidden {
+            display: none;
+        }
+        .corner-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: grey;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <div id="loading-screen" class="loading-screen">
-    <img src="media/Logo.png" alt="Bobydun Logo" class="logo">
-    <p>Загрузка...</p>
-  </div>
-
-  <div id="app" class="app" style="display:none;">
-    <img src="media/Bobydun.png" alt="Bobydun" class="character" />
-    <div class="text-box">
-      <p id="animatedText"></p>
+    <div id="dialog">
+        <p id="bobyText">Меня зовут BobyDun, но можно просто Boby 😉</p>
+        <button id="startButton" class="button hidden">Поехали</button>
     </div>
-    <button id="nextButton" onclick="nextStage()">Поехали</button>
-  </div>
+    <button id="skipButton" class="corner-button">Далее</button>
 
-  <audio id="bg-music" src="media/music.mp3" loop autoplay></audio>
-  <script src="script.js"></script>
+    <script>
+        const bobyText = document.getElementById('bobyText');
+        const startButton = document.getElementById('startButton');
+        const skipButton = document.getElementById('skipButton');
+
+        let step = 0;
+
+        // Симуляция диалога
+        const dialogSteps = [
+            "Меня зовут BobyDun, но можно просто Boby 😉",
+            "Нажми на кнопку 'Поехали', чтобы продолжить!"
+        ];
+
+        function updateDialog() {
+            if (step < dialogSteps.length) {
+                bobyText.textContent = dialogSteps[step];
+                if (step === 1) {
+                    startButton.classList.remove('hidden'); // Показать кнопку "Поехали"
+                }
+            }
+        }
+
+        // Обработчик кнопки "Поехали"
+        startButton.addEventListener('click', () => {
+            startButton.classList.add('hidden'); // Скрыть кнопку "Поехали"
+            alert('Поехали!'); // Действие при нажатии
+        });
+
+        // Обработчик кнопки "Далее"
+        skipButton.addEventListener('click', () => {
+            step++;
+            updateDialog();
+        });
+
+        // Инициализация
+        updateDialog();
+    </script>
 </body>
 </html>
