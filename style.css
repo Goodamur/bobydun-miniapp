@@ -46,13 +46,11 @@ body {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(-10px); }
 }
+
 .dialog-bb {
-  background: url('bubble-up.png') no-repeat center center;
+  background: url('dialog-windouw - 2.1.png') no-repeat center center;
   background-size: 100% 100%;
 }
-
-
-
 
 button {
   margin-top: 24px;
