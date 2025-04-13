@@ -1,32 +1,32 @@
 const tg = window.Telegram.WebApp;
 tg.expand();
 
-const dialogues = [
-  "Привет! Рад видеть тебя здесь.",
-  "Меня зовут BobyDun, но можно просто Boby 😉",
-  "Я помогу тебе понять мир криптовалют легко и интересно!",
-  "Готов? Тогда жми «Поехали» 🚀"
+const messages = [
+  "Привет!\nРад видеть тебя здесь.",
+  "Меня зовут\nBobyDun.\nМожно просто Boby 😉",
+  "Я помогу тебе\nпонять крипту\nлегко и интересно.",
+  "Готов?\nЖми кнопку\n«Поехали!» 🚀"
 ];
 
 let index = 0;
-const container = document.getElementById("dialogue-container");
+const textElement = document.getElementById("animatedText");
+const nextButton = document.getElementById("nextButton");
 
-function renderDialogue(text, showFinal = false) {
-  container.innerHTML = `
-    <div class="dialogue-bubble">
-      <p>${text}</p>
-    </div>
-    <button onclick="nextDialogue()" class="next-button">${showFinal ? 'Поехали' : 'Далее'}</button>
-  `;
-  if (showFinal) {
-    document.querySelector(".next-button").onclick = () => window.location.href = "https://t.me/BobydunBot";
+function renderMessage(text, isFinal = false) {
+  textElement.innerText = text;
+  nextButton.style.display = isFinal ? "inline-block" : "none";
+
+  if (isFinal) {
+    nextButton.onclick = () => {
+      window.location.href = "https://t.me/BobydunBot"; // или путь к тесту
+    };
   }
 }
 
-function nextDialogue() {
+function nextStage() {
   index++;
-  if (index < dialogues.length) {
-    renderDialogue(dialogues[index], index === dialogues.length - 1);
+  if (index < messages.length) {
+    renderMessage(messages[index], index === messages.length - 1);
   }
 }
 
@@ -34,6 +34,6 @@ window.onload = function () {
   setTimeout(() => {
     document.getElementById("loading-screen").style.display = "none";
     document.getElementById("app").style.display = "flex";
-    renderDialogue(dialogues[index]);
-  }, 4000);
-}
+    renderMessage(messages[index], false);
+  }, 3000);
+};
