@@ -1,25 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bobydun: Введение</title>
+  <title>Bobydun MiniApp</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <div class="container">
-    <img src="CryBoby.png" alt="CryBob" class="character" />
-    <div class="dialogue">
-      <p>Привет! Рад видеть тебя здесь.</p>
-      <p>Меня зовут <strong>CryBob</strong>, но можно просто <strong>Boby</strong>😉<br />
-      Я тут для того, чтобы быть твоим помощником и гидом в мире криптовалют.<br />
-      Со мной ты научишься безопасно инвестировать и торговать😎</p>
-      <p>Тыцни кнопку "<strong>Поехали</strong>" ⬇️, если готов, и погнали😁</p>
+  <div class="app">
+    <img src="CryBoby.png" alt="CryBoby" class="character" />
+    <div class="text-box">
+      <p id="animatedText"></p>
     </div>
-    <button onclick="startApp()">Поехали</button>
+    <button onclick="startGame()">Поехали</button>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
