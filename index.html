@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Тест по криптовалютам</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bobydun MiniApp</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <div id="app">
-    <!-- Блок вопросов -->
-    <div id="question-block">
-      <h1 id="question-text">Вопрос</h1>
-      <div id="answers"></div>
-    </div>
-
-    <!-- Блок результата -->
-    <div id="result-block" style="display: none;">
-      <h1 id="result-text">Результат</h1>
-      <h2 id="level-text"></h2>
-      <button onclick="location.reload()">Пройти снова</button>
-    </div>
+  <div id="loading-screen" class="loading-screen">
+    <img src="media/Logo.png" alt="Bobydun Logo" class="logo">
+    <p>Загрузка...</p>
   </div>
 
+  <div id="app" class="app" style="display:none;">
+    <img src="media/Bobydun.png" alt="Bobydun" class="character" />
+    <div class="text-box">
+      <p id="animatedText"></p>
+    </div>
+    <button id="nextButton" onclick="nextStage()">Поехали</button>
+  </div>
+
+  <audio id="bg-music" src="media/music.mp3" loop autoplay></audio>
   <script src="script.js"></script>
 </body>
 </html>
