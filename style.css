@@ -21,6 +21,7 @@ body {
 .logo {
   width: 300px;
   margin-bottom: 10px;
+  animation: float 5s ease-in-out infinite, blink 8s infinite;
 }
 
 .app {
