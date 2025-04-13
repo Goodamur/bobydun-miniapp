@@ -1,10 +1,9 @@
 
 body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to top right, #ffe7b4, #fffaf0);
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #1e293b, #0f172a);
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,24 +11,36 @@ body {
 }
 .container {
   text-align: center;
-  padding: 20px;
+  max-width: 360px;
+  margin: auto;
 }
 .character {
-  width: 150px;
-  height: auto;
-  animation: float 3s ease-in-out infinite;
+  width: 180px;
+  animation: bobyPulse 2.5s infinite ease-in-out;
 }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.dialogue {
+  background-color: #fff;
+  padding: 16px;
+  margin-top: 12px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  font-size: 16px;
+  line-height: 1.5;
 }
 button {
   margin-top: 20px;
-  padding: 12px 20px;
-  font-size: 16px;
-  background: #38bdf8;
+  background-color: #ffa500;
   color: white;
   border: none;
+  padding: 12px 24px;
+  font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
+}
+button:hover {
+  background-color: #ff8c00;
+}
+@keyframes bobyPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }

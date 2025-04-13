@@ -4,27 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bobydun | Приветствие</title>
+  <title>Bobydun: Введение</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
   <div class="container">
-    <img src="bobydun.png" alt="Bobydun" class="character" />
-    <h1>Привет! Я Bobydun 🤖</h1>
-    <p>Я проведу тебя в мир криптовалют весело и просто.</p>
-    <button onclick="startLesson()">🚀 Начать обучение</button>
+    <img src="CryBoby.png" alt="CryBob" class="character" />
+    <div class="dialogue">
+      <p>Привет! Рад видеть тебя здесь.</p>
+      <p>Меня зовут <strong>CryBob</strong>, но можно просто <strong>Boby</strong>😉<br />
+      Я тут для того, чтобы быть твоим помощником и гидом в мире криптовалют.<br />
+      Со мной ты научишься безопасно инвестировать и торговать😎</p>
+      <p>Тыцни кнопку "<strong>Поехали</strong>" ⬇️, если готов, и погнали😁</p>
+    </div>
+    <button onclick="startApp()">Поехали</button>
   </div>
-
   <script src="script.js"></script>
-  <script>
-    const tg = window.Telegram.WebApp;
-    tg.expand();
-    tg.MainButton.text = "Начать 🚀";
-    tg.MainButton.show();
-    tg.MainButton.onClick(() => {
-      startLesson();
-    });
-  </script>
 </body>
 </html>
