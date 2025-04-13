@@ -38,8 +38,8 @@ function showText(text, callback) {
 function nextStage() {
   index++;
   if (index < messages.length) {
-    appContainer.classList.remove("fade-in"); // сброс
-    void appContainer.offsetWidth; // перезапуск анимации
+    appContainer.classList.remove("fade-in");
+    void appContainer.offsetWidth;
     appContainer.classList.add("fade-in");
 
     showText(messages[index]);
