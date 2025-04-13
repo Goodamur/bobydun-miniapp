@@ -1,29 +1,35 @@
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #f2f2f2;
+  background: linear-gradient(to right, #1e293b, #0f172a);
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-
-.app {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+.container {
   text-align: center;
+  padding: 20px;
 }
-
+.character {
+  width: 150px;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 button {
   margin-top: 20px;
   padding: 12px 20px;
   font-size: 16px;
-  background-color: #2e90fa;
+  background: #38bdf8;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
 }

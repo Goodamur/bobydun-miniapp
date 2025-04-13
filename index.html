@@ -1,30 +1,30 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bobydun MiniApp</title>
+  <title>Bobydun | Приветствие</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <div class="app">
-    <h1>Добро пожаловать в Bobydun!</h1>
-    <p>Начни обучение и открывай новые уровни!</p>
-    <button onclick="startGame()">Начать</button>
+  <div class="container">
+    <img src="bobydun.png" alt="Bobydun" class="character" />
+    <h1>Привет! Я Bobydun 🤖</h1>
+    <p>Я проведу тебя в мир криптовалют весело и просто.</p>
+    <button onclick="startLesson()">🚀 Начать обучение</button>
   </div>
 
   <script src="script.js"></script>
- <script>
-  const tg = window.Telegram.WebApp;
-  tg.expand(); // Расширяет окно Mini App
-  tg.MainButton.text = "Продолжить";
-  tg.MainButton.show();
-
-  // Добавляем действие при нажатии Telegram-кнопки
-  tg.MainButton.onClick(() => {
-    startGame();
-  });
-</script>
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.expand();
+    tg.MainButton.text = "Начать 🚀";
+    tg.MainButton.show();
+    tg.MainButton.onClick(() => {
+      startLesson();
+    });
+  </script>
 </body>
 </html>
