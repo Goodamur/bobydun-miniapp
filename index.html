@@ -1,15 +1,27 @@
-<div id="loading-screen" class="loading-screen">
-  <img src="logo.png" alt="Bobydun Logo" class="logo">
-  <p>Загрузка...</p>
-</div>
-
-<div id="app" class="app" style="display: none;">
-  <img src="Bobydun.png" class="character" />
-  <div class="text-box">
-    <p id="animatedText"></p>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bobydun MiniApp</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div id="loading-screen" class="loading-screen">
+    <img src="logo.png" alt="Bobydun Logo" class="logo">
+    <p>Загрузка...</p>
   </div>
-  <!-- Кнопка "Далее" -->
-  <button id="nextButton" class="small-button">Далее</button>
-  <!-- Кнопка "Поехали" -->
-  <button id="startButton" class="start-button" onclick="startGame()">Поехали</button>
-</div>
+
+  <div id="app" class="app" style="display:none;">
+    <img src="Bobydun.png" alt="Bobydun" class="character" />
+    <div class="text-box">
+      <p id="animatedText"></p>
+    </div>
+    <button id="nextButton" onclick="nextStage()">Поехали</button>
+  </div>
+
+  <audio id="bg-music" src="music.mp3" loop autoplay></audio>
+  <script src="script.js"></script>
+</body>
+</html>

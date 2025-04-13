@@ -1,67 +1,66 @@
-/* Стиль экрана загрузки */
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: url('bg1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .loading-screen {
-  position: fixed; /* Занимает всю область экрана */
-  top: 0;
-  left: 0;
-  width: 100vw; /* Полная ширина окна */
-  height: 100vh; /* Полная высота окна */
-  background-image: url('background1.jpg'); /* Фоновая картинка */
-  background-size: cover; /* Растяжение картинки */
-  background-position: center; /* Центрирование изображения */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  z-index: 1000; /* Поверх всех элементов */
+  justify-content: center;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.5em;
 }
 
-/* Кнопка "Далее" */
-.small-button {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  display: none; /* Скрыта по умолчанию */
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
 }
 
-.small-button:hover {
-  background-color: #0056b3;
-}
-
-/* Кнопка "Поехали" */
-.start-button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  display: none; /* Скрыта по умолчанию */
-}
-
-.start-button:hover {
-  background-color: #1e7e34;
-}
-
-/* Анимации персонажа */
-@keyframes blink {
-  0%, 90%, 100% { opacity: 1; }
-  95% { opacity: 0.1; }
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
 }
 
 .character {
-  animation: blink 5s infinite, float 3s ease-in-out infinite;
+  width: 180px;
+  animation: float 3s ease-in-out infinite, blink 5s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes blink {
+  0%, 100%, 90% { opacity: 1; }
+  91%, 92% { opacity: 0.3; }
+}
+
+.text-box {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+}
+
+button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff9900;
+  color: #fff;
+  cursor: pointer;
 }
