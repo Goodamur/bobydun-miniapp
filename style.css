@@ -47,9 +47,34 @@ body {
   50% { transform: translateX(-50%) translateY(-10px); }
 }
 
+.bubble-container {
+  position: absolute;
+  bottom: 320px; /* поднимет бабл над Боби */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw;
+  padding: 0 20px;
+}
+
 .dialog-bb {
-  background: url('dialog-windouw - 2.1.png') no-repeat center center;
-  background-size: 100% 100%;
+  width: 360px;
+  height: auto;
+}
+
+#animatedText {
+  position: absolute;
+  max-width: 280px;
+  font-size: 1.1em;
+  color: #222;
+  font-weight: bold;
+  white-space: pre-line;
+  line-height: 1.4em;
+  text-align: left;
+  z-index: 2;
 }
 
 button {
