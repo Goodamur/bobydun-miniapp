@@ -1,6 +1,3 @@
-const tg = window.Telegram.WebApp;
-tg.expand();
-
 const messages = [
   "Привет! Рад видеть тебя здесь.",
   "Меня зовут BobyDun, но можно просто Boby 😉",
@@ -15,6 +12,7 @@ const messages = [
 ];
 
 let index = 0;
+
 const textElement = document.getElementById("animatedText");
 const nextButton = document.getElementById("nextButton");
 
@@ -48,4 +46,6 @@ window.onload = function () {
     document.getElementById("app").style.display = "flex";
     showText(messages[index]);
   }, 4000);
-}
+};
+
+nextButton.addEventListener("click", nextStage);
