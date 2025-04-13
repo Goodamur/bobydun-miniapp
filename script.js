@@ -18,10 +18,13 @@ let index = 0;
 const textElement = document.getElementById("animatedText");
 const nextButton = document.getElementById("nextButton");
 const skipButton = document.getElementById("skipButton");
+const appContainer = document.getElementById("app");
 
 function showText(text, callback) {
   let i = 0;
   textElement.innerHTML = '';
+  textElement.classList.add("fade-in");
+
   const interval = setInterval(() => {
     textElement.innerHTML += text[i];
     i++;
@@ -35,6 +38,10 @@ function showText(text, callback) {
 function nextStage() {
   index++;
   if (index < messages.length) {
+    appContainer.classList.remove("fade-in"); // сброс
+    void appContainer.offsetWidth; // перезапуск анимации
+    appContainer.classList.add("fade-in");
+
     showText(messages[index]);
 
     if (index === 4) {
@@ -55,7 +62,9 @@ function nextStage() {
 window.onload = function () {
   setTimeout(() => {
     document.getElementById("loading-screen").style.display = "none";
-    document.getElementById("app").style.display = "flex";
+    appContainer.style.display = "flex";
+    appContainer.classList.add("fade-in");
+
     showText(messages[index]);
     skipButton.style.display = "inline-block";
     nextButton.style.display = "none";
