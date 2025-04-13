@@ -1,58 +1,49 @@
-
 body {
   margin: 0;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  background-color: #f3f3f3;
-  overflow: hidden;
+  background: #111;
+  color: white;
+  text-align: center;
 }
-#loading-screen {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background-color: #161616;
+
+.hidden { display: none; }
+
+.splash-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 24px;
+  height: 100vh;
+  background: #111;
 }
+
 .logo {
-  width: 200px;
-  margin-bottom: 20px;
+  max-width: 200px;
+  animation: float 4s ease-in-out infinite;
 }
-.app {
-  text-align: center;
-  padding-top: 50px;
-}
-.character {
-  width: 200px;
-  animation: float 2s infinite ease-in-out, blink 4s infinite;
-}
-.text-box {
+
+.loading-text {
+  font-size: 24px;
   margin-top: 20px;
-  font-size: 20px;
 }
-button {
-  margin-top: 20px;
-  font-size: 20px;
-  padding: 10px 20px;
-  border: none;
-  background-color: #ff9800;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
-@keyframes blink {
-  0%, 97%, 100% { filter: brightness(1); }
-  98%, 99% { filter: brightness(0.5); }
+
+.character {
+  width: 150px;
+  animation: float 3s ease-in-out infinite, blink 4s step-end infinite;
 }
-.info-text {
-  font-size: 20px;
-  margin: 30px;
-  text-align: center;
+
+@keyframes blink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.5; }
+}
+
+.text-box {
+  margin: 20px;
+  font-size: 18px;
+  max-width: 90%;
 }

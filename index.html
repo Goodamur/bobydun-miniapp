@@ -3,42 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bobydun MiniApp</title>
+  <title>BobyDun MiniApp</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <div id="loading-screen">
-    <img src="logo.png" alt="Bobydun Logo" class="logo" />
-    <p>Загрузка...</p>
+  <div id="splash" class="splash-screen">
+    <img src="logo.png" alt="BobyDun Logo" class="logo"/>
+    <p class="loading-text">Загрузка...</p>
   </div>
 
-  <div class="app" style="display:none;">
+  <div class="app hidden">
     <img src="Bobydun.png" alt="Bobydun" class="character" />
     <div class="text-box">
       <p id="animatedText"></p>
     </div>
-    <button id="startButton" onclick="showInfo()">Поехали</button>
+    <button onclick="startGame()">Поехали</button>
+    <audio id="bgMusic" src="music.mp3" autoplay loop></audio>
   </div>
 
-  <div id="info-screen" style="display:none;">
-    <p class="info-text">Здесь ты сможешь изучать крипту, проходить тесты и развивать свои навыки!</p>
-  </div>
-
-  <div id="question-screen" style="display:none;">
-    <p class="info-text">
-      КРУТО! Ты молодец💥<br>
-      Рад, что ты готов к исследованиям.<br>
-      А сейчас я задам тебе пару вопросов,<br>
-      чтобы понять твой уровень.<br>
-      Главное — отвечай честно!<br>
-      Всего будет несколько тестов.<br>
-      Расслабься и не бойся ошибаться.
-    </p>
-    <button onclick="startQuiz()">Пройти тест</button>
-  </div>
-
-  <audio id="bg-music" src="music.mp3" autoplay loop></audio>
   <script src="script.js"></script>
 </body>
 </html>
