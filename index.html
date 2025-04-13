@@ -5,12 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Диалог с Boby</title>
     <style>
+        /* Резервный цвет для фона */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background: black; /* Цвет, пока картинка не загрузится */
+            color: white;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Фоновая картинка */
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: url('background.jpg') no-repeat center center fixed;
             background-size: cover;
+            opacity: 0; /* Скрыта, пока не загрузится */
+            transition: opacity 0.5s ease-in-out;
+            z-index: -1;
         }
+
+        .background-image.loaded {
+            opacity: 1; /* Появляется после загрузки */
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
         .button {
             padding: 10px 20px;
             font-size: 16px;
@@ -20,66 +51,24 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .button.hidden {
-            display: none;
-        }
-        .corner-button {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px 20px;
-            font-size: 14px;
-            background-color: grey;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
-    <div id="dialog">
+    <div class="background-image" id="background"></div>
+    <div class="content">
         <p id="bobyText">Меня зовут BobyDun, но можно просто Boby 😉</p>
         <button id="startButton" class="button hidden">Поехали</button>
     </div>
-    <button id="skipButton" class="corner-button">Далее</button>
 
     <script>
-        const bobyText = document.getElementById('bobyText');
-        const startButton = document.getElementById('startButton');
-        const skipButton = document.getElementById('skipButton');
+        const background = document.getElementById('background');
 
-        let step = 0;
-
-        // Симуляция диалога
-        const dialogSteps = [
-            "Меня зовут BobyDun, но можно просто Boby 😉",
-            "Нажми на кнопку 'Поехали', чтобы продолжить!"
-        ];
-
-        function updateDialog() {
-            if (step < dialogSteps.length) {
-                bobyText.textContent = dialogSteps[step];
-                if (step === 1) {
-                    startButton.classList.remove('hidden'); // Показать кнопку "Поехали"
-                }
-            }
-        }
-
-        // Обработчик кнопки "Поехали"
-        startButton.addEventListener('click', () => {
-            startButton.classList.add('hidden'); // Скрыть кнопку "Поехали"
-            alert('Поехали!'); // Действие при нажатии
-        });
-
-        // Обработчик кнопки "Далее"
-        skipButton.addEventListener('click', () => {
-            step++;
-            updateDialog();
-        });
-
-        // Инициализация
-        updateDialog();
+        // Предзагрузка фонового изображения
+        const preloadImage = new Image();
+        preloadImage.src = 'background.jpg';
+        preloadImage.onload = () => {
+            background.classList.add('loaded'); // Показать фон
+        };
     </script>
 </body>
 </html>
