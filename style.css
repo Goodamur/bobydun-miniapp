@@ -1,49 +1,59 @@
+
 body {
-  margin: 0;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: #111;
-  color: white;
+  overflow: hidden;
+}
+
+.loading-screen {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
-.hidden { display: none; }
+.logo {
+  width: 80%;
+  max-width: 300px;
+}
 
-.splash-screen {
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #111;
-}
-
-.logo {
-  max-width: 200px;
-  animation: float 4s ease-in-out infinite;
-}
-
-.loading-text {
-  font-size: 24px;
-  margin-top: 20px;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
 }
 
 .character {
-  width: 150px;
-  animation: float 3s ease-in-out infinite, blink 4s step-end infinite;
+  width: 200px;
+  animation: float 3s ease-in-out infinite, blink 5s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
 
 @keyframes blink {
-  0%, 90%, 100% { opacity: 1; }
-  95% { opacity: 0.5; }
+  0%, 97%, 100% { opacity: 1; }
+  98%, 99% { opacity: 0.1; }
+}
+
+button {
+  background-color: #ffa500;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .text-box {
-  margin: 20px;
+  width: 80%;
+  margin-top: 20px;
   font-size: 18px;
-  max-width: 90%;
 }
