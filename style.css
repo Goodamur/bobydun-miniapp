@@ -71,14 +71,20 @@ button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  padding: 8px 14px;
-  font-size: 1em;
-  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #ff9900;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   z-index: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.skip-button:hover {
+  background-color: #e68a00;
 }
 
 
