@@ -4,23 +4,23 @@ tg.expand();
 const dialogues = [
  {
     text: "Привет!\nРад тебя видеть.",
-    position: "bubble-up"
+    position: "dialog-bb"
   },
   {
     text: "Меня зовут\nBob Dun.\nМожно просто Boby 😉",
-    position: "bubble-up"
+    position: "dialog-bb"
   },
   {   
     text: "Я твой гид\nи помошник по крипте",
-    position: "bubble-up"
+    position: "dialog-bb"
   },
   {   
     text: "Я помогу тебе\nпонять крипту\nлегко и интересно.",
-    position: "bubble-up"
+    position: "dialog-bb"
   },
   {  
     text:"Ты готов зайти\nко мне в гости?\nЕсли да, то нажимай\nкнопку «Поехали!» 🚀"
-    position: "bubble-up"
+    position: "dialog-bb"
   },      
 ];
 
