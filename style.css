@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: url('media/background.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background: black;
   overflow: hidden;
+  color: white;
 }
 
-/* Стили для загрузочного экрана */
+/* Загрузочный экран */
 .loading-screen {
   display: flex;
   flex-direction: column;
@@ -14,7 +14,6 @@ body {
   justify-content: center;
   height: 100vh;
   background-color: #000;
-  color: #fff;
   font-size: 1.5em;
 }
 
@@ -23,7 +22,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Стили для основного приложения */
+/* Основное приложение */
 .app {
   display: flex;
   flex-direction: column;
@@ -34,7 +33,6 @@ body {
   padding: 20px;
 }
 
-/* Анимация персонажа */
 .character {
   width: 180px;
   animation: float 3s ease-in-out infinite, blink 5s infinite;
@@ -53,11 +51,10 @@ body {
 .text-box {
   margin-top: 20px;
   font-size: 1.2em;
-  color: #fff;
   text-shadow: 0 0 5px #000;
 }
 
-button {
+.button {
   margin-top: 30px;
   padding: 10px 20px;
   font-size: 1.2em;
