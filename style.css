@@ -74,23 +74,24 @@ button {
   cursor: pointer;
 }
 
+
 .dialogue-bubble {
   background: url('pngwing.com__1_-removebg-preview.png') no-repeat center center;
   background-size: contain;
   padding: 40px 30px;
-  max-width: 80%;
-  min-height: 140px;
+  max-width: 90%;
+  min-height: 160px;
   margin: 20px auto;
-  font-size: 1.1em;
-  color: #222;
-  font-weight: 600;
+  font-size: 1.2em;
+  color: #3a7434;
+  font-weight: bold;
+  text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  text-align: left;
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
+
 
 .dialogue-bubble button {
   align-self: flex-end;
