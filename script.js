@@ -1,51 +1,42 @@
-const tg = window.Telegram.WebApp;
-tg.expand();
-
-const messages = [
+// Переменные для управления диалогами
+const dialogues = [
   "Привет! Рад видеть тебя здесь.",
   "Меня зовут BobyDun, но можно просто Boby 😉",
-  "Я тут для того, чтобы быть твоим помощником и гидом в мире криптовалют.",
-  "Со мной ты научишься безопасно инвестировать и торговать 😎",
-  "Тыцни кнопку 'Поехали', если готов — и погнали 🚀",
-  "КРУТО! Ты молодец 💥",
-  "Рад, что ты готов к исследованиям!",
-  "А сейчас я задам тебе пару вопросов, чтобы понять твой уровень.",
-  "Всего будет несколько тестовых вопросов — не бойся ошибаться 😉",
-  "Готов? Жми 'Пройти тест'!"
+  "Я твой гид в мире крипты. Вместе мы научимся безопасно инвестировать и торговать!",
+  "Нажми кнопку, если готов, и поехали!" // Последняя реплика
 ];
 
-let index = 0;
-const textElement = document.getElementById("animatedText");
+let currentDialogueIndex = 0; // Текущий индекс диалога
+
+// Элементы на странице
+const dialogueElement = document.getElementById("animatedText");
 const nextButton = document.getElementById("nextButton");
+const startButton = document.getElementById("startButton");
 
-function showText(text, callback) {
-  let i = 0;
-  textElement.innerHTML = '';
-  const interval = setInterval(() => {
-    textElement.innerHTML += text[i];
-    i++;
-    if (i === text.length) {
-      clearInterval(interval);
-      if (callback) callback();
-    }
-  }, 40);
-}
-
-function nextStage() {
-  index++;
-  if (index < messages.length) {
-    showText(messages[index]);
-    if (index === messages.length - 1) {
-      nextButton.innerText = "Пройти тест";
-      nextButton.onclick = () => window.location.href = "https://t.me/BobydunBot";
-    }
+// Функция для показа следующей реплики
+function showNextDialogue() {
+  if (currentDialogueIndex < dialogues.length - 1) {
+    dialogueElement.innerHTML = ""; // Очищаем текст
+    typeText(dialogues[currentDialogueIndex], "animatedText", 50, () => {
+      nextButton.style.display = "block"; // Показываем кнопку «Далее»
+    });
+    currentDialogueIndex++;
+  } else {
+    // Если это последняя реплика
+    nextButton.style.display = "none"; // Прячем кнопку «Далее»
+    startButton.style.display = "block"; // Показываем кнопку «Поехали»
   }
 }
 
-window.onload = function () {
-  setTimeout(() => {
-    document.getElementById("loading-screen").style.display = "none";
-    document.getElementById("app").style.display = "flex";
-    showText(messages[index]);
-  }, 4000);
-}
+// Скрываем все кнопки при старте
+nextButton.style.display = "none";
+startButton.style.display = "none";
+
+// Событие на кнопку «Далее»
+nextButton.addEventListener("click", () => {
+  nextButton.style.display = "none"; // Прячем кнопку «Далее»
+  showNextDialogue(); // Переход к следующей реплике
+});
+
+// Инициализация первого диалога
+showNextDialogue();
