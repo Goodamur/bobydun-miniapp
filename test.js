@@ -9,7 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
         { text: "Ценные бумаги", score: 1 }
       ]
     },
-    // Остальные вопросы...
+    {
+      text: "Что такое блокчейн?",
+      answers: [
+        { text: "Цепочка данных", score: 2 },
+        { text: "Сеть пользователей", score: 1 },
+        { text: "Программа для торговли", score: 0 },
+        { text: "Тип компьютера", score: 0 }
+      ]
+    }
   ];
 
   let index = 0;
@@ -23,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     q.answers.forEach(a => {
       const btn = document.createElement('button');
       btn.textContent = a.text;
-      btn.className = 'answer';
+      btn.className = 'button';
       btn.onclick = () => {
         score += a.score;
         index++;
@@ -38,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('result-block').style.display = 'block';
     document.getElementById('result-text').textContent = `Ты набрал ${score} баллов`;
     document.getElementById('level-text').textContent =
-      score < 8 ? "Новичок" : score < 16 ? "Осознанный" : "Гений крипты";
+      score < 4 ? "Новичок" : score < 8 ? "Осознанный" : "Гений крипты";
   }
 
   showQuestion();
