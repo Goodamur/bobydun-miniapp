@@ -5,27 +5,28 @@ const dialogues = [
   "Привет! Рад видеть тебя здесь.",
   "Меня зовут BobyDun, но можно просто Boby 😉",
   "Я помогу тебе понять мир криптовалют легко и интересно!",
-  "Готов? Тогда жми «Далее»!"
+  "Готов? Тогда жми «Поехали» 🚀"
 ];
 
 let index = 0;
 const container = document.getElementById("dialogue-container");
 
-function renderDialogue(text) {
+function renderDialogue(text, showFinal = false) {
   container.innerHTML = `
     <div class="dialogue-bubble">
       <p>${text}</p>
-      <button onclick="nextDialog()">Далее</button>
     </div>
+    <button onclick="nextDialogue()" class="next-button">${showFinal ? 'Поехали' : 'Далее'}</button>
   `;
+  if (showFinal) {
+    document.querySelector(".next-button").onclick = () => window.location.href = "https://t.me/BobydunBot";
+  }
 }
 
-function nextDialog() {
+function nextDialogue() {
   index++;
   if (index < dialogues.length) {
-    renderDialogue(dialogues[index]);
-  } else {
-    window.location.href = "https://t.me/BobydunBot";
+    renderDialogue(dialogues[index], index === dialogues.length - 1);
   }
 }
 

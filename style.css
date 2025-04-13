@@ -34,7 +34,7 @@ body {
 
 .character {
   width: 180px;
-  animation: float 3s ease-in-out infinite, blink 5s infinite;
+  animation: float 4s ease-in-out infinite, blink 8s infinite;
 }
 
 @keyframes float {
@@ -43,64 +43,34 @@ body {
 }
 
 @keyframes blink {
-  0%, 100%, 90% { opacity: 1; }
-  91%, 92% { opacity: 0.3; }
+  0%, 97%, 100% { opacity: 1; }
+  98% { opacity: 0.1; }
 }
-
-
-.text-box {
-  margin-top: 20px;
-  padding: 16px 24px;
-  font-size: 1.2em;
-  color: #eee;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  backdrop-filter: blur(4px);
-  max-width: 90%;
-  text-align: center;
-}
-
-
-button {
-  margin-top: 30px;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  border: none;
-  border-radius: 10px;
-  background-color: #ff9900;
-  color: #fff;
-  cursor: pointer;
-}
-
 
 .dialogue-bubble {
-  background: url('pngwing.com__1_-removebg-preview.png') no-repeat center center;
+  background: url('bubble.png') no-repeat center center;
   background-size: contain;
   padding: 40px 30px;
-  max-width: 90%;
+  width: 90%;
+  max-width: 400px;
   min-height: 160px;
   margin: 20px auto;
   font-size: 1.2em;
-  color: #3a7434;
+  color: #2a4d2e;
   font-weight: bold;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-
-.dialogue-bubble button {
-  align-self: flex-end;
-  margin-top: 10px;
-  padding: 6px 14px;
-  font-size: 1em;
+.next-button {
+  margin-top: 16px;
+  padding: 10px 20px;
+  font-size: 1.1em;
   background-color: #ff9900;
+  color: #fff;
   border: none;
-  border-radius: 8px;
-  color: white;
+  border-radius: 10px;
   cursor: pointer;
 }
