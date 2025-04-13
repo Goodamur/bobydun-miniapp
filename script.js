@@ -24,6 +24,13 @@ const dialogues = [
   },      
 ];
 
+function nextStage() {
+  index++;
+  if (index < dialogues.length) {
+    renderDialogue(index);
+  }
+}
+
 let index = 0;
 const textElement = document.getElementById("animatedText");
 const nextButton = document.getElementById("nextButton");
