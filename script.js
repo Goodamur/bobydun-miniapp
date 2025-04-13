@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Объединённый список вопросов
   const questions = [
     {
       text: "Что такое криптовалюта?",
@@ -16,6 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
         { text: "Илон Маск", score: 0 },
         { text: "Джонни Синс", score: 0 },
         { text: "CZ Binance", score: 1 }
+      ]
+    },
+    {
+      text: "Какая цель у риск-менеджмента?",
+      answers: [
+        { text: "Управлять убытками", score: 2 },
+        { text: "Увеличить доходность", score: 0 },
+        { text: "Игнорировать риски", score: 0 },
+        { text: "Быстро разбогатеть", score: 0 }
       ]
     },
     {
