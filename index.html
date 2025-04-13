@@ -1,30 +1,56 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bobydun MiniApp</title>
+  <title>Bobydun App</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <div id="loading-screen" class="loading-screen">
-    <img src="logo.png" alt="Bobydun Logo" class="logo">
-    <p>Загрузка...</p>
+  <div id="app">
+    <div id="splash-screen" class="scene active">
+      <img src="logo.png" alt="Логотип BobyDun" class="logo"/>
+    </div>
+
+    <div id="dialogue-scene" class="scene hidden">
+      <img src="boby.png" alt="Персонаж BobyDun" id="boby"/>
+      <div id="bubble" class="bubble-up"></div>
+      <button id="next-btn" class="small-button">Далее</button>
+      <button id="start-btn" class="main-button hidden">Поехали</button>
+    </div>
+
+    <div id="test-scene" class="scene hidden">
+      <div id="question-container" class="bubble-up"></div>
+      <div id="options-container"></div>
+      <button class="back-button" onclick="switchScene('dialogue-scene')">Назад</button>
+    </div>
+
+    <div id="result-scene" class="scene hidden">
+      <img src="boby.png" alt="Персонаж BobyDun" class="boby-static"/>
+      <div id="result-text" class="bubble-up"></div>
+      <button id="choose-course-btn" class="main-button">Выбрать курс</button>
+      <button class="back-button" onclick="switchScene('test-scene')">Назад</button>
+    </div>
+
+    <div id="course-scene" class="scene hidden">
+      <div id="course-description" class="bubble-up"></div>
+      <div id="course-options">
+        <button class="main-button" data-course="Базовый">Базовый</button>
+        <button class="main-button" data-course="Средний">Средний</button>
+        <button class="main-button" data-course="Продвинутый">Продвинутый</button>
+      </div>
+      <button class="back-button" onclick="switchScene('result-scene')">Назад</button>
+    </div>
+
+    <div id="menu-scene" class="scene hidden">
+      <h2>Добро пожаловать в меню обучения</h2>
+      <p>Выбранный курс: <span id="current-course"></span></p>
+      <ul></ul>
+      <button class="back-button" onclick="switchScene('course-scene')">Назад</button>
+    </div>
   </div>
 
- <div id="app" class="app" style="display:none;">
-  <img src="Bobydun.png" alt="Bobydun" class="boby" />
-  
-  <div class="bubble-container">
-    <img src="dialog-windouw - 2.1.png" alt="Диалоговое облако" class="dialog-bb" />
-    <p id="animatedText"></p>
-  </div>
-  
-  <button id="nextButton" style="display: none;">Поехали</button>
-</div>
-
-  <audio id="bg-music" src="music.mp3" loop autoplay></audio>
-  <script src="script.js"></script>
+  <script src="test.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 </html>
