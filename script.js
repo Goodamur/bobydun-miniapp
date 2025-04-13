@@ -1,34 +1,37 @@
-const tg = window.Telegram.WebApp;
-tg.expand();
-tg.MainButton.text = "Поехали";
-tg.MainButton.show();
-tg.MainButton.onClick(() => {
-  startGame();
-});
 
-const text = `Привет! Рад видеть тебя здесь.
-
-Меня зовут BobyDun, но можно просто Boby😉 Я тут для того, чтобы быть твоим помощником и гидом в мире криптовалют.
-Со мной ты научишься безопасно инвестировать и торговать😎
-
-Тыцни кнопку "Поехали" ⬇️, если готов, и погнали😁`;
-
-let index = 0;
-const speed = 40;
-const animatedText = document.getElementById("animatedText");
-
-function typeWriter() {
-  if (index < text.length) {
-    animatedText.innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, speed);
+function typeText(elementId, text, callback) {
+  const el = document.getElementById(elementId);
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      el.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 40);
+    } else if (callback) {
+      callback();
+    }
   }
+  type();
 }
 
 window.onload = () => {
-  typeWriter();
+  setTimeout(() => {
+    document.getElementById("loader").classList.add("hidden");
+    document.getElementById("app").classList.remove("hidden");
+    typeText("animatedText", "Привет! Рад видеть тебя здесь.\nМеня зовут Boby Dun, но можно просто Boby.\nЯ тут для того, что бы быть твоим помощником и гидом в мире криптовалют.\nСо мной ты научишься, безопасно, инвестировать и торговать\nТыцни кнопку \"Поехали\", если готов, и погнали!!");
+  }, 4000);
 };
 
-function startGame() {
-  alert("Запускаем курс! 🚀 (сюда пойдет логика следующего шага)");
+function nextStep() {
+  document.getElementById("app").classList.add("hidden");
+  document.getElementById("infoScreen").classList.remove("hidden");
+  setTimeout(() => {
+    document.getElementById("infoScreen").classList.add("hidden");
+    document.getElementById("dialog2").classList.remove("hidden");
+    typeText("animatedText2", "КРУТО! Ты молодец💥\nРад, что ты готов к исследованиям.\nА сейчас я задам тебе пару вопросов, чтобы понять твои уровень.\nТы, главное, отвечай честно, для того, что бы я мог подготовить, для тебя, правильную программу.\nВсего будет несколько тестовых вопросов, которые я придумал для тебя.\nРасслабься и не бойся ошибаться.");
+  }, 4000);
+}
+
+function startTest() {
+  alert("Здесь будет переход к первому тесту");
 }

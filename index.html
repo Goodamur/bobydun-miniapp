@@ -5,16 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bobydun MiniApp</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-  <div class="app">
-    <img src="Bobydun.png" alt="Bobydun" class="character" />
+  <div class="loader-screen" id="loader">
+    <img src="logo.png" alt="Bobydun Logo" class="logo">
+  </div>
+
+  <div class="app hidden" id="app">
+    <img src="Bobydun.png" alt="Bobydun" class="character animated" />
     <div class="text-box">
       <p id="animatedText"></p>
     </div>
-    <button onclick="startGame()">Поехали</button>
+    <button id="nextButton" onclick="nextStep()">Поехали</button>
   </div>
+
+  <div class="info-screen hidden" id="infoScreen">
+    <p class="styled-text">
+      Добро пожаловать в Bobydun!<br><br>
+      Здесь ты научишься:<br>• Инвестировать безопасно<br>• Понимать рынок<br>• Изучать крипту через игру<br><br>
+      Готов? Двигаемся дальше!
+    </p>
+  </div>
+
+  <div class="dialog-screen hidden" id="dialog2">
+    <img src="Bobydun.png" alt="Bobydun" class="character animated" />
+    <div class="text-box">
+      <p id="animatedText2" class="styled-text"></p>
+    </div>
+    <button onclick="startTest()">Пройти тест</button>
+  </div>
+
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
   <script src="script.js"></script>
 </body>
