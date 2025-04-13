@@ -45,7 +45,7 @@ window.onload = function () {
     document.getElementById("loading-screen").style.display = "none";
     document.getElementById("app").style.display = "flex";
     showText(messages[index]);
-  }, 4000);
+  }, 2000); // Уменьшено время загрузки
 };
 
 nextButton.addEventListener("click", nextStage);
