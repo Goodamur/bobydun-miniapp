@@ -17,6 +17,7 @@ const messages = [
 let index = 0;
 const textElement = document.getElementById("animatedText");
 const nextButton = document.getElementById("nextButton");
+const skipButton = document.getElementById("skipButton");
 
 function showText(text, callback) {
   let i = 0;
@@ -35,8 +36,17 @@ function nextStage() {
   index++;
   if (index < messages.length) {
     showText(messages[index]);
+
+    if (index === 4) {
+      nextButton.innerText = "Поехали";
+      nextButton.style.display = "inline-block";
+      skipButton.style.display = "none";
+    }
+
     if (index === messages.length - 1) {
       nextButton.innerText = "Пройти тест";
+      nextButton.style.display = "inline-block";
+      skipButton.style.display = "none";
       nextButton.onclick = () => window.location.href = "https://t.me/BobydunBot";
     }
   }
@@ -47,5 +57,7 @@ window.onload = function () {
     document.getElementById("loading-screen").style.display = "none";
     document.getElementById("app").style.display = "flex";
     showText(messages[index]);
+    skipButton.style.display = "inline-block";
+    nextButton.style.display = "none";
   }, 4000);
 }
