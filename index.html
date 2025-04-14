@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BobyDun MiniApp</title>
+  <title>Bobydun MiniApp</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
@@ -13,18 +13,18 @@
     <p>Загрузка...</p>
   </div>
 
-  <div id="app" class="app" style="display:none;">
-    <img src="media/Bobydun.png" alt="Bobydun" class="character" />
+  <div id="app" class="app" style="display: none;">
+    <img src="media/character.png" alt="BobyDun" class="character" />
     
-    <div class="bubble-container">
-      <img id="dialog-bubble" src="media/bubble-up.png" alt="dialog" class="dialog-bb" />
-      <p id="animatedText" class="bubble-text"></p>
+    <div class="dialogue">
+      <img src="media/dialogue-bubble.png" class="bubble" />
+      <p id="dialogue-text"></p>
     </div>
-    
-    <button id="nextButton">Поехали</button>
+
+    <button id="nextButton" style="display: none;">Поехали</button>
   </div>
 
-  <audio id="bg-music" src="media/music.mp3" loop autoplay></audio>
+  <audio id="bg-music" src="media/music.mp3" autoplay loop></audio>
   <script src="script.js"></script>
 </body>
 </html>
