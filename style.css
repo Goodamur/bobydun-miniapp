@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: url('media/bg1.jpg') no-repeat center center fixed;
+  background: url('media/background.jpg') no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
 }
@@ -33,55 +33,43 @@ body {
 }
 
 .character {
-  width: 260px;
-  max-width: 80vw;
-  animation: float 4s ease-in-out infinite;
+  width: 220px;
+  animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-10px); }
 }
 
-.bubble-container {
+.dialogue {
   position: relative;
-  width: 90vw;
-  max-width: 360px;
   margin-top: 20px;
 }
 
-.dialog-bb {
-  width: 100%;
-  height: auto;
+.bubble {
+  width: 300px;
 }
 
-.bubble-text {
+#dialogue-text {
   position: absolute;
-  top: 20%;
-  left: 10%;
-  right: 10%;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
   color: #222;
   font-size: 1.1em;
-  line-height: 1.5em;
-  text-align: left;
-  word-break: break-word;
-  white-space: pre-line;
+  width: 80%;
+  line-height: 1.4em;
   font-weight: bold;
-  text-shadow: 1px 1px 2px #fff;
 }
 
-#nextButton {
+button {
   margin-top: 30px;
-  padding: 10px 20px;
+  padding: 10px 25px;
   font-size: 1.2em;
   border: none;
   border-radius: 10px;
   background-color: #ff9900;
   color: #fff;
   cursor: pointer;
-  display: none;
-}
-
-#nextButton:hover {
-  background-color: #e68a00;
 }
