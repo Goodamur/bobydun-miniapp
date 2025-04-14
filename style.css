@@ -1,14 +1,11 @@
-/* Общие стили */
 body {
   margin: 0;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: url('media/background.jpg') no-repeat center center fixed;
+  background: url('media/bg1.jpg') no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
-  color: white;
 }
 
-/* Загрузочный экран */
 .loading-screen {
   display: flex;
   flex-direction: column;
@@ -16,15 +13,15 @@ body {
   justify-content: center;
   height: 100vh;
   background-color: #000;
+  color: #fff;
   font-size: 1.5em;
 }
 
 .logo {
-  width: 150px;
+  width: 200px;
   margin-bottom: 20px;
 }
 
-/* Основное приложение */
 .app {
   display: flex;
   flex-direction: column;
@@ -36,28 +33,44 @@ body {
 }
 
 .character {
-  width: 180px;
-  margin-bottom: 20px;
-  animation: float 3s ease-in-out infinite, blink 5s infinite;
+  width: 260px;
+  max-width: 80vw;
+  animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-8px); }
 }
 
-@keyframes blink {
-  0%, 100%, 90% { opacity: 1; }
-  91%, 92% { opacity: 0.3; }
-}
-
-.text-box {
+.bubble-container {
+  position: relative;
+  width: 90vw;
+  max-width: 360px;
   margin-top: 20px;
-  font-size: 1.2em;
-  text-shadow: 0 0 5px #000;
 }
 
-.button {
+.dialog-bb {
+  width: 100%;
+  height: auto;
+}
+
+.bubble-text {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  color: #222;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  text-align: left;
+  word-break: break-word;
+  white-space: pre-line;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+#nextButton {
   margin-top: 30px;
   padding: 10px 20px;
   font-size: 1.2em;
@@ -66,9 +79,9 @@ body {
   background-color: #ff9900;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  display: none;
 }
 
-.button:hover {
-  background-color: #cc7a00;
+#nextButton:hover {
+  background-color: #e68a00;
 }
